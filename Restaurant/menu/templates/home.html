@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% block content %} 
+{% if user.is_authenticated %}
+<h3
+  style="
+    background-color: rgb(233, 191, 141);
+    padding: 10px;
+    margin-top: 15px;
+    color: black;
+  "
+>
+  <center><b> Welcome, {{ user.username }}!</b></center>
+</h3>
+{% else %}
+<center>
+  <h3
+    style="
+      background-color: rgb(233, 191, 141);
+      padding: 10px;
+      margin-top: 15px;
+      color: black;
+    "
+  >
+    <b>Welcome to our homepage!</b>
+  </h3>
+</center>
+{% endif %}
+<center>
+  <p style="padding: 10px; font-size: 25px; width: 40%; margin-top: 6%">
+    The highest quality, simple yet delicious food, meticulously prepared and
+    beautifully served, as well as a warm atmosphere and soothing interior, make
+    this restaurant an excellent choice for a pleasant lunch, dinner, or
+    breakfast. Since its beginnings, guests have been greeted with a smile and
+    served a delicious meal.
+  </p>
+</center>
+{% endblock %}

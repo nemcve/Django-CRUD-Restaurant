@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+{% block content%}
+<form method="POST" action="/update/{{ meal.id }}">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>
+        <input name="MealName" required value="{{ menu.Meal.MealName }}" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input
+          name="MealIngredients"
+          required
+          value="{{  menu.Meal.MealIngredients }}"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input
+          name="MealDietType"
+          required
+          value="{{  menu.Meal.MealDietType }}"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input name="MealPrice" required value="{{  menu.Meal.MealPrice }}" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit">Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

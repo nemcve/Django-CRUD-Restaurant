@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+{% block content %}
+<center>
+  <h3
+    style="
+      background-color: rgb(233, 191, 141);
+      padding: 10px;
+      margin-top: 15px;
+      color: black;
+    "
+  >
+    <b>Meals suited for you</b>
+  </h3>
+</center>
+<div class="table-responsive">
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <th scope="col">Options</th>
+    </tr>
+    <!-- business logic, displays all meals with the same diet type as the user's -->
+    <!-- for loop for displaying all meals -->
+    {% for meal in menu %}
+    <!-- checking if a diet type is the same as the user's -->
+    {% if meal.MealDietType == user.userprofile.UserDietType %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+      <td style="vertical-align: middle">
+        <a
+          onclick="window.print();"
+          target="_blank"
+          style="cursor: pointer; text-decoration: underline; color: white"
+          >Print</a
+        >
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

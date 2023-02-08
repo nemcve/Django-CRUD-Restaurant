@@ -1,0 +1,471 @@
+{% extends 'base.html' %} 
+{% block title %}Menu{% endblock %} 
+{% block content %}
+
+<div class="table-responsive">
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.0}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.0 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.1}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.1 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.2}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.2 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.3}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.3 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.4}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.4 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.5}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.5 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.6}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.6 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+  <table class="table table-sm table-dark">
+    {% csrf_token %}
+    <tr>
+      <center>
+        <h1
+          style="
+            background-color: rgb(233, 191, 141);
+            padding: 10px;
+            margin-top: 15px;
+            color: black;
+          "
+        >
+          {{menusection.7}}
+        </h1>
+      </center>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Diet type</th>
+      <th scope="col">Price</th>
+      <div class="no-print">
+        <th scope="col">Options</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </div>
+    </tr>
+    <!-- For loop for viewing all meals on the menu -->
+    {% for meal in menu %} {% if meal.MealSection == menusection.7 %}
+    <tr>
+      {% if meal.MealPicture %}
+      <td><img style="width: 300px" src="{{meal.MealPicture.url}}" /></td>
+      {% endif %}
+      <td style="vertical-align: middle">{{meal.MealName}}</td>
+      <td style="vertical-align: middle">{{meal.MealIngredients}}</td>
+      <td style="vertical-align: middle">{{meal.MealDietType}}</td>
+      <td style="vertical-align: middle">{{meal.MealPrice}} din.</td>
+
+      <!-- Predefined boolean logic for visibility, means that if the user is not logged on, they cannot see the options for updating and deleting, but only for printing. -->
+      <div class="no-print">
+        {% if user.is_staff %}
+        <td style="vertical-align: middle">
+          <a style="color: white" href="update/{{meal.id}}">Edit</a>
+        </td>
+        <td style="vertical-align: middle">
+          <a style="color: white" href="delete/{{meal.id}}">Delete</a>
+        </td>
+        {% endif %}
+        <td style="vertical-align: middle">
+          <a
+            onclick="window.print(); target = _blank"
+            style="cursor: pointer; text-decoration: underline; color: white"
+            >Print</a
+          >
+        </td>
+      </div>
+    </tr>
+    {% endif %} {% endfor %}
+  </table>
+</div>
+{% endblock %}
