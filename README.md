@@ -14,6 +14,12 @@ With this app, you can fully manage a restaurant's website.
   <li>Meal adding</li>
   <li>Menu printing</li>
 </ul>
-
-Markup :  `code()`
-sfasfasfasf
+<br>To get it running on your local machine, follow the steps below:
+<ol>
+  <li>Run the commands below in your terminal:</li>
+  <li>1.`$ git clone https://github.com/nemcve/Django-CRUD-Restaurant.git`</li>
+  <li>2.`$ cd Django-CRUD-Restaurant/Restaurant`</li>
+  <li>3.`$ pip install -r requirements.txt`</li>
+  <li>4.`$ python manage.py runserver`</li>
+  <li>5.Open your browser and navigate to http://127.0.0.1:8000/</li>
+<ol>
