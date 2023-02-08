@@ -17,13 +17,12 @@ With this app, you can fully manage a restaurant's website.
 <br>To get it running on your local machine, follow the steps below:
 <ol>
   <li>Run the commands below in your terminal:</li>
-  <li>
-    ```
-    $ git clone https://github.com/nemcve/Django-CRUD-Restaurant.git
-    ```
-  </li>
-  <li>`$ cd Django-CRUD-Restaurant/Restaurant`</li>
-  <li>`$ pip install -r requirements.txt`</li>
-  <li>`$ python manage.py runserver`</li>
+  <li>$ git clone https://github.com/nemcve/Django-CRUD-Restaurant.git</li>
+  <li>$ cd Django-CRUD-Restaurant/Restaurant</li>
+  <li>$ pip install -r requirements.txt</li>
+  <li>$ python manage.py runserver</li>
   <li>Open your browser and navigate to http://127.0.0.1:8000/</li>
+  <li>Admin login username:admin password:admin</li>
+  <li>If you want to create a new admin user:</li>
+  <li>$ python manage.py createsuperuser, and follow the prompts</li>
 <ol>
