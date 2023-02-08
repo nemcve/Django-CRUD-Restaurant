@@ -25,5 +25,5 @@ With this app, you can fully manage a restaurant's website.
   <li>Admin login username: admin password: admin</li>
 </ol>
 <br>If you want to create a new admin user:
-  <li>$ python manage.py createsuperuser, and follow the prompts</li>
+  $ python manage.py createsuperuser, and follow the prompts
 
