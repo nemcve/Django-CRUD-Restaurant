@@ -1,8 +1,16 @@
 # Django-CRUD-Restaurant
 With this app, you can fully manage a restaurant's website.
 <h2>Key features:</h2>
-<br>
-<br>This app has functionality for showing the menu, and for deleting, editing, printing, and adding meals.
-<br>Functionalities for user registration, login, and display of a logged-in user profile.
-<br>Also, the app has a section that fully adapts to the user's choice of diet type, which is chosen during registration, showing only the meals for that diet type.
+<ul>
+  <li>Registration</li>
+  <li>Login</li>
+  <li>Logged-in user profile</li>
+  <li>Menu display with meals and their sections</li>
+  <li>Menu that adapts to the user's choice of diet type, showing only the meals for that diet type.</li>
+  <li>Meal search by name</li>
+  <li>Meal deletion</li>
+  <li>Meal editing</li>
+  <li>Meal adding</li>
+  <li>Menu printing</li>
+</ul>
 
