@@ -23,6 +23,6 @@ With this app, you can fully manage a restaurant's website.
   <li>$ python manage.py runserver</li>
   <li>Open your browser and navigate to http://127.0.0.1:8000/</li>
   <li>Admin login username: admin password: admin</li>
-  <li>If you want to create a new admin user:</li>
+  If you want to create a new admin user:
   <li>$ python manage.py createsuperuser, and follow the prompts</li>
 <ol>
