@@ -26,3 +26,4 @@ To get it running on your local machine, follow the steps below:
 </ol>
 If you want to create a new admin user:
 <br>$ python manage.py createsuperuser, and follow the prompts
+<br>To access the admin control panel, in the url field, add /admin. Like this: https://127.0.0.1:8000/admin
