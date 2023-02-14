@@ -1,5 +1,5 @@
 # Django-CRUD-Restaurant
-With this app, you can fully manage a restaurant's website. Made with Django, HTML, CSS and Bootstrap.
+With this app, you can fully manage a restaurant's website. Made with Python in Django Framework, SQLite3, HTML, CSS and Bootstrap.
 <h2>Key features:</h2>
 <ul>
   <li>User registration</li>
