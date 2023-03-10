@@ -2,8 +2,8 @@ from django.db import models
 
 
 class DietType(models.Model):
-    DietTypeId = models.CharField(max_length=5, null=False, blank=False)
-    DietTypeName = models.CharField(max_length=30, null=False, blank=False)
+    DietTypeId = models.CharField(max_length=5)
+    DietTypeName = models.CharField(max_length=30)
 
     def __str__(self):
         return self.DietTypeName
@@ -13,7 +13,7 @@ class DietType(models.Model):
 
 
 class MenuSection(models.Model):
-    MenuSectionName = models.CharField(max_length=30, null=False, blank=False)
+    MenuSectionName = models.CharField(max_length=30)
 
     def __str__(self):
         return self.MenuSectionName
@@ -24,14 +24,14 @@ class MenuSection(models.Model):
 
 class Meal(models.Model):
     MealPicture = models.ImageField(
-        upload_to="images/", blank=False, null=False)
+        upload_to="images/")
     MealName = models.CharField(
-        max_length=30, unique=True, blank=False, null=False)
+        max_length=30)
     MealIngredients = models.CharField(
-        max_length=100, blank=False, null=False)
-    MealPrice = models.IntegerField(blank=False, null=False, default=0)
+        max_length=100)
+    MealPrice = models.IntegerField(default=0)
     MealDietType = models.ForeignKey(
-        DietType, null=False, blank=False, on_delete=models.CASCADE)
+        DietType,  on_delete=models.CASCADE)
     MealSection = models.ForeignKey(
         MenuSection, on_delete=models.CASCADE)
 
